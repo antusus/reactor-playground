@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'pl.kamil'
+version '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('io.projectreactor:reactor-bom:2020.0.2')
+    implementation 'io.projectreactor:reactor-core'
+    testCompile 'io.projectreactor:reactor-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.assertj:assertj-core:3.18.1'
+}
+
+test {
+    useJUnitPlatform()
+}
