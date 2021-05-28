@@ -12,6 +12,7 @@ import java.util.Map;
 
 import static reactor.core.publisher.SignalType.ON_COMPLETE;
 
+//Excerpt From: Josh Long. “Reactive Spring”.
 @Configuration
 public class WebsocketConfiguration {
   @Bean

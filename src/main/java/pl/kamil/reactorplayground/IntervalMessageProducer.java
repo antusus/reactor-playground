@@ -5,6 +5,7 @@ import reactor.core.publisher.Flux;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicLong;
 
+//Excerpt From: Josh Long. “Reactive Spring”.
 public class IntervalMessageProducer {
 
   public static Flux<String> produce(int c) {
