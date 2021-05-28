@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body style="padding: 10px">
+<div class="row">
+    <div id="messages" class="col s12 m6"></div>
+</div>
+<div class="container">
+    <div class="row">
+        <textarea name="message" id="message" class="materialize-textarea"></textarea>
+        <label for="message">Type your message</label>
+    </div>
+    <div class="row">
+        <button id="send" class="waves-effect waves-light btn">Send</button>
+    </div>
+</div>
+<script src="wsChat.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/plugin/localizedFormat.js"></script>
+<script>dayjs.extend(window.dayjs_plugin_localizedFormat)</script>
+</body>
+</html>
