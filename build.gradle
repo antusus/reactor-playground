@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.5.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'org.springframework.cloud.contract' version '3.0.3'
 }
 
 group = 'pl.kamil'
@@ -16,8 +17,26 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
+    testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-verifier:3.0.3'
+    testImplementation 'io.rest-assured:spring-web-test-client:4.4.0'
 }
 
 test {
     useJUnitPlatform()
+}
+
+contracts {
+    testFramework = 'JUNIT5'
+    testMode = 'WEBTESTCLIENT'
+    packageWithBaseClasses = 'pl.kamil.reactorplayground'
+    baseClassMappings {
+        baseClassMapping(".*customers.*", "pl.kamil.reactorplayground.ContractsBaseTest")
+    }
+}
+
+contractTest {
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat = 'full'
+    }
 }
